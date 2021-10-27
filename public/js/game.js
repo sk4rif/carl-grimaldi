@@ -133,7 +133,7 @@ scene("game", ({ level, score }) => {
     '*': [sprite('surprise'), solid(), 'mushroom-surprise'],
     'v': [sprite('unboxed'), solid()],
     '^': [sprite('evil-shroom'), solid(), body(), 'dangerous'],
-    '£': [sprite('evil-shroom1'), solid(), body(), 'dangerous-1'],
+    '£': [sprite('evil-shroom-1'), solid(), body(), 'dangerous-1'],
    
 
  
