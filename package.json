@@ -2,7 +2,7 @@
   "name": "socket.io-chat",
   "version": "0.0.0",
   "description": "A simple chat client using socket.io",
-  "main": "app.js",
+  "main": "index.js",
   "private": true,
   "license": "BSD",
   "dependencies": {
@@ -13,6 +13,6 @@
     "yarn": "^1.22.10"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node index.js"
   }
 }
