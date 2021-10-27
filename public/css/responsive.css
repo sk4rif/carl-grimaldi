@@ -1,4 +1,11 @@
-@import url('http://fonts.cdnfonts.com/css/pixeboy');
+@font-face {
+  font-family: 'Pixeboy';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pixeboy'), url('https://fonts.cdnfonts.com/s/34898/Pixeboy-z8XGD.woff') format('woff');
+}
+
+
 
 body{
     font-family: 'Pixeboy', sans-serif;
