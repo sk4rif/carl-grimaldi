@@ -23,6 +23,8 @@
 }
 
 
+
+
 button.btn-buy {
 	padding: 8px 55px;
 	font-size: 25px;
@@ -30,7 +32,7 @@ button.btn-buy {
 	cursor: pointer;
 	outline: none;
 	color: #fff;
-	background-color: #009900;
+	background-color: green;
 	border: none;
 	border-radius: 15px;
 	box-shadow: 0 9px #999;
@@ -54,7 +56,7 @@ button.btn-sell {
 	cursor: pointer;
 	outline: none;
 	color: #fff;
-	background-color: #B62D2D;
+	background-color: red;
 	border: none;
 	border-radius: 15px;
 	box-shadow: 0 9px #999;
@@ -66,19 +68,6 @@ button.btn-sell:active {
 	background-color: #8e3e3e;
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
-}
-
-
-#Buy {
-	position: absolute;
-	left: 30%;
-	top: 50%;
-}
-
-#Sell {
-	position:relative;
-	left: 60%;
-	top: 100%;
 }
 
 
