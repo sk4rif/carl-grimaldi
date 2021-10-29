@@ -243,4 +243,6 @@ socket.on('clearalltrade', (pricefinish) => {
     document.getElementById("btn-sell").disabled = false;
     document.getElementById("btn-buy").disabled = false;
     document.getElementById("balance").innerHTML = ("Balance: " + balance + "$");
+    document.getElementById("sellat").innerHTML = ("Sell @:       $  ");
+    document.getElementById("buyat").innerHTML = ("Buy @:       $  ");
 })
