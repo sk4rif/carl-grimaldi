@@ -22,7 +22,7 @@
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
       <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      
       <!-- Scrollbar Custom CSS -->
       <!-- nav bar-->
 
@@ -38,44 +38,25 @@
       <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
       <body>
-        <nav class="navbar navbar-expand-custom navbar-mainbg">
-            <a class="navbar-brand navbar-logo" href="#">NFTEmpire</a>
-            <a class="navbar-brand navbar-price">
-                Carl Price:
-                <p id="price"></p>
-            </a>
-            <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars text-white"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-                   
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="far fa-address-book"></i>Me</a>
-                        
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="play.html"><i class="far fa-clone"></i>Play</a>
-                    </li>
-                    <li class="nav-item-active">
-                        <a class="nav-link" href="finance.html"><i class="far fa-calendar-alt"></i>Finance</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Python Stuff</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Finance and Coding</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <nav id="nav-1">
+
+            <a class="link-1" href="index.html">Me</a>
+            <a class="link-1" href="play.html">Play</a>
+            <a class="link-1" href="finance.html">Finance</a>
+            <a class="link-1" href="#">Python Stuff</a>
+    
+            <link rel="stylesheet" href="css/navbar-play.css">
+          </nav>
    
  <!-- Note: This example only works with Windows Insider Preview Builds 16237+. -->
 
-    <chat>chat</chat>
+    <chat>
+        <style>
+
+        </style>
+        This Chart is made with Chart.js and Socket.io. All the data that you can see are syncronised with other users in a extremelly short delay.</chat>
     <section>
-        
+        <link rel="icon" href="images/fevicon.png" type="image/gif" />
         <meta chartset="UTF-8">
         <meta name="viewport" content="width=device-width" , initial-scale=1.0>
         <meta http-equiv="X_UA-Compatible" content="ie=edge">
@@ -83,13 +64,23 @@
         <script src="/socket.io/socket.io.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
         </link>
-    
+
+        <div id="loading">
+            <img src="images/giphy.gif"/>
+         </div>
 
     
         <div id="container">
+            <a class="navbar-price">
+                <h1 id="price"></h1>
+            </a>
+
+    
             <canvas id="myChart"></canvas>
             <script src='client_chart.js'></script>
             <div onload="show();"></div>
+
+
         </div>
 
         
@@ -97,28 +88,38 @@
 
     </section>
     <aside>
+    <script src="3d.pug"></script>
+        
+    </aside>
+    <caller>
         <div id="Buy">
-            <button class="btn-buy" onclick='buy();'>Buy</button>
+            <button class="btn-buy" id="btn-buy" onclick='buy();'>Buy</button>
         </div>
 
         <div id="Sell">
-            <button class="btn-sell" onclick='sell();'>Sell</button>
+            <button class="btn-sell" id="btn-sell" onclick='sell();'>Sell</button>
         </div>
+
         <div id="Balance">
             <h1 id="balance"></h1>
         </div>
-    </aside>
-    <caller>
-
-
-    </caller>
-    <footer>
-
-    </footer>
-    <video-public>       
         
+    </caller>
+
+
+    <video-public>
+        <div id="Buyat">
+            <p1 id="buyat"></p1>
+            <p1 id="ite_buy"></p1>
+        </div>
+
     </video-public>
-    <video-private></video-private>
+    <video-private>
+        <div id="Sellat">
+            <p1 id="sellat"></p1>
+            <p1 id="ite_sell"></p1>
+        </div>
+    </video-private>
 
       </body>
       <script src="js/jquery.min.js"></script>
