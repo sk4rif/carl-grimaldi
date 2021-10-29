@@ -21,8 +21,8 @@ function getRandomInt(max) {
 
 setTimeout(function(){
   io.emit('createchart');
+  io.emit('loading');
 },2000)
-
 
 
 function getdata(){
@@ -80,12 +80,20 @@ function getdata(){
       let price = yvalue.y
       //console.log(price);
       io.emit('newdata', price);
+  
+      let pricefinish = yvalue.y
       console.log(price, sec)
+      
 
       if (sec==374){
-        sec=0
         clearInterval(interval);
+        console.log(pricefinish)
+        io.emit('clearalltrade', pricefinish)
+        
+        clearInterval(interval);
+        sec=0
         io.emit('clear');
+        io.emit('loading');
         io.emit('createchart');
         getdata();
         countdown();
@@ -96,9 +104,14 @@ function getdata(){
     
 
       if (yvalue.y<0){
-        sec=0
         clearInterval(interval);
+        console.log(pricefinish)
+        io.emit('clearalltrade', pricefinish)
+        
+        
+        sec=0
         io.emit('clear');
+        io.emit('loading');
         io.emit('createchart');
         getdata();
         countdown();
