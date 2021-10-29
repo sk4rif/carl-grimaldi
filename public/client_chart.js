@@ -8,7 +8,14 @@ var ctx = document.getElementById('myChart').getContext('2d');
 
 let balance = 1000
 
+socket.on('loading', () => {
+    document.getElementById("loading").remove();
+})
+
 socket.on('createchart', () => {
+
+ 
+ 
   data = []
   sec = 0
   function map(f, a) {
@@ -18,7 +25,7 @@ socket.on('createchart', () => {
         result[i] = f(a[i]);
     return result;
   }
-  
+ 
   var myChart = new Chart(ctx, {
     type: 'line',
     data:{
@@ -58,6 +65,7 @@ socket.on('createchart', () => {
           }
       }
     }
+    
   }); 
   socket.on('newdata', (price) => {
     function updateConfigAsNewObject(myChart) {
@@ -77,7 +85,8 @@ socket.on('createchart', () => {
       xScale = myChart.scales.x;
       yScale = myChart.scales.y;
       myChart.update();
-      document.getElementById("price").innerHTML = Math.floor(price);
+      document.getElementById("price").innerHTML = ("Carl Price: " + (Math.floor(price)) + "$");
+      document.getElementById("balance").innerHTML = ("Balance: " + balance + "$");
     }
     updateConfigAsNewObject(myChart);
 
@@ -121,27 +130,117 @@ socket.on('countdown', (s) =>{
   document.getElementById("countdown").innerHTML = 'Next Round in ' + (s);
 });
 
+
+let sellat = 0
+let buyat = 0
+let ite_buy = 0
+let ite_sell = 0
 function buy(){
-    balance = balance
-    let buy = 0
-    socket.once('newdata', (price) => {
-        buy = price
-        balance = balance - price
-        console.log(price);      
-        console.log(balance);  
-        document.getElementById("balance").innerHTML = (balance);
-    })
-    document.getElementById("balance").innerHTML = (balance);
+
+    ite_buy = 1
+
+    if ((ite_sell)==0){
+        console.log(ite_buy);
+        console.log(ite_sell);
+        
+        socket.once('newdata', (price) => {
+            buyat = price
+            balance = balance - buyat
+            document.getElementById("buyat").innerHTML = ("Buy @:      " + buyat + "$   ");
+            document.getElementById("ite_buy").innerHTML = ("     Order: " + ite_buy);
+            document.getElementById("ite_sell").innerHTML = ("    Order: " + ite_sell);
+        })
+        document.getElementById("btn-buy").disabled = true;
+        document.getElementById("btn-buy").style.backgroundColor = "grey";
+        
+    }
+
+    if ((ite_sell)==(ite_buy)){
+        console.log(ite_buy);
+        console.log(ite_sell);
+
+        ite_buy=0
+        ite_sell=0
+        socket.once('newdata', (price) => {
+            buyat = price
+            balance = balance - buyat
+            
+            document.getElementById("buyat").innerHTML = ("Buy @:      " + buyat + "$");
+            document.getElementById("ite_buy").innerHTML = ("        Order: " + ite_buy);
+            document.getElementById("ite_sell").innerHTML = ("       Order: " + ite_sell);
+        })
+        document.getElementById("btn-sell").disabled = false;
+        document.getElementById("btn-buy").disabled = false;
+        document.getElementById("btn-sell").style.backgroundColor = "red";
+        document.getElementById("btn-green").style.backgroundColor = "green";
+   
+    }
+    
 }
 function sell(){
-    balance = balance
-    let sell = 0
-    socket.once('newdata', (price) => {
-        sell = price
-        balance = balance + sell
-        console.log(price);      
-        console.log(balance);  
-        document.getElementById("balance").innerHTML = (balance);
-    })
-    document.getElementById("balance").innerHTML = (balance);
+    ite_sell = 1
+
+
+    if ((ite_buy)==0){
+        console.log(ite_buy);
+        console.log(ite_sell);
+        
+        socket.once('newdata', (price) => {
+            sellat = price
+            balance = balance + sellat
+            document.getElementById("sellat").innerHTML = ("Sell @:     " + sellat + "$  ");
+            document.getElementById("ite_sell").innerHTML = ("     Order: " + ite_sell);
+            document.getElementById("ite_buy").innerHTML = ("      Order: " + ite_buy);
+        })
+        document.getElementById("btn-sell").disabled = true;
+        document.getElementById("btn-sell").style.backgroundColor = "grey";
+        
+    }
+    if ((ite_buy)==(ite_sell)){
+        console.log(ite_buy);
+        console.log(ite_sell);
+        ite_buy=0
+        ite_sell=0
+        socket.once('newdata', (price) => {
+            sellat = price
+            balance = balance + sellat
+            
+            document.getElementById("sellat").innerHTML = ("Sell @:       " + sellat + "$  ");
+            document.getElementById("ite_sell").innerHTML = ("     Order: " + ite_sell);
+            document.getElementById("ite_buy").innerHTML = ("      Order: " + ite_buy);
+        })
+        document.getElementById("btn-sell").disabled = false;
+        document.getElementById("btn-buy").disabled = false;
+        document.getElementById("btn-sell").style.backgroundColor = "red";
+        document.getElementById("btn-buy").style.backgroundColor = "green";
+        
+
+    }
+
 }
+socket.on('clearalltrade', (pricefinish) => {
+
+    
+    if (ite_buy==1){
+
+        document.getElementById("sellat").innerHTML = ("Buy @:       " + pricefinish + "$  ");
+        console.log(pricefinish)
+        console.log(ite_buy)
+        balance = balance + pricefinish
+    }
+    if (ite_sell==1){
+        document.getElementById("sellat").innerHTML = ("Sell @:       " + pricefinish + "$  ");
+        console.log(pricefinish)
+
+        balance = balance - pricefinish
+    }
+    ite_buy=0
+    ite_sell=0
+    document.getElementById("ite_sell").innerHTML = ("     Order: " + ite_sell);
+    document.getElementById("ite_buy").innerHTML = ("      Order: " + ite_buy);
+    document.getElementById("btn-sell").style.backgroundColor = "red";
+    document.getElementById("btn-buy").style.backgroundColor = "green";
+    document.getElementById("btn-sell").disabled = false;
+    document.getElementById("btn-buy").disabled = false;
+    document.getElementById("balance").innerHTML = ("Balance: " + balance + "$");
+})
