@@ -26,7 +26,7 @@ i {
 .navbar-price{
   position: relative;
   padding: 15px;
-  background-color: #fff;
+  color: green;
   left: 35%;
 }
 .navbar-mainbg{
@@ -226,20 +226,21 @@ caller {
 #Buy {
 	position: absolute;
 	left: 33.333333%;
-	top: 80%;
+	top: 85%;
 }
 
 #Sell {
 	position: absolute;
 	left: 53.66666%;
-	top: 80%;
+	top: 85%;
 }
 
 
 #Balance {
 	position: absolute;
-	left: 33.5%;
-	top: 70%;
+  left: 25%;
+	top: 93%;
+  width: 500px;
 }
 
 
@@ -250,6 +251,13 @@ div.game {
 }
 header, nav, section, aside, footer {
 	padding: 5px;
+}
+
+#loading {
+	position: absolute;
+	width: 580px;
+	left: 30%;
+	top: 10%;
 }
 
 
