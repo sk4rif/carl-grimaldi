@@ -21,25 +21,12 @@ function getRandomInt(max) {
 
 setTimeout(function(){
   io.emit('createchart');
-  io.emit('loading');
 },2000)
+
 
 
 function getdata(){
 
-  function countdown(){
-    var s = 5
-    io.emit('visible');
-    var countdown = setInterval(function(){
-      s = (s - 0.1).toFixed(1);
-      io.emit('countdown', s);
-      if (s==0){
-        clearInterval(countdown);
-        s=5
-        io.emit('hide');
-      }
-    }, 100)
-  };
 
   let bear2 = (getRandomInt(1200));
   let bull2 = (getRandomInt(1200));
@@ -80,23 +67,20 @@ function getdata(){
       let price = yvalue.y
       //console.log(price);
       io.emit('newdata', price);
-  
-      let pricefinish = yvalue.y
+
       console.log(price, sec)
       
 
       if (sec==374){
         clearInterval(interval);
-        console.log(pricefinish)
-        io.emit('clearalltrade', pricefinish)
-        
+        console.log(price)
+        io.emit('clearalltrade', price)
+        io.emit('clear');
         clearInterval(interval);
         sec=0
-        io.emit('clear');
-        io.emit('loading');
         io.emit('createchart');
         getdata();
-        countdown();
+
         //console.log(data);
 
         
@@ -105,16 +89,14 @@ function getdata(){
 
       if (yvalue.y<0){
         clearInterval(interval);
-        console.log(pricefinish)
-        io.emit('clearalltrade', pricefinish)
-        
+        console.log(price)
+        io.emit('clearalltrade', price)
+        io.emit('clear');
         
         sec=0
-        io.emit('clear');
-        io.emit('loading');
         io.emit('createchart');
         getdata();
-        countdown();
+
         //console.log(data);
         
         
@@ -124,65 +106,3 @@ function getdata(){
 }
 getdata();
 
-io.on('connection', (socket) => {
-    ////CHAT///////
-
-    let numUsers = 0;
-
-
-      let addedUser = false;
-
-      // when the client emits 'new message', this listens and executes
-      socket.on('new message', (data) => {
-        // we tell the client to execute 'new message'
-        socket.broadcast.emit('new message', {
-          username: socket.username,
-          message: data
-        });
-      });
-
-      // when the client emits 'add user', this listens and executes
-      socket.on('add user', (username) => {
-        if (addedUser) return;
-
-        // we store the username in the socket session for this client
-        socket.username = username;
-        ++numUsers;
-        addedUser = true;
-        socket.emit('login', {
-          numUsers: numUsers
-        });
-        // echo globally (all clients) that a person has connected
-        socket.broadcast.emit('user joined', {
-          username: socket.username,
-          numUsers: numUsers
-        });
-      });
-
-      // when the client emits 'typing', we broadcast it to others
-      socket.on('typing', () => {
-        socket.broadcast.emit('typing', {
-          username: socket.username
-        });
-      });
-
-      // when the client emits 'stop typing', we broadcast it to others
-      socket.on('stop typing', () => {
-        socket.broadcast.emit('stop typing', {
-          username: socket.username
-        });
-      });
-
-      // when the user disconnects.. perform this
-      socket.on('disconnect', () => {
-        if (addedUser) {
-          --numUsers;
-
-          // echo globally that this client has left
-          socket.broadcast.emit('user left', {
-            username: socket.username,
-            numUsers: numUsers
-          });
-        }
-      });
-});
