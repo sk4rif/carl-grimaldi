@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-       <script src="/Users/Carl/Desktop/Design test/design glassy design test/js/NFT.js"></script>
+      
       <!-- basic -->
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>NFTEmpire</title>
+      <title>Carl Grimaldi Chart</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -21,7 +21,8 @@
       <link rel="stylesheet" href="css/style.css">
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
+      <!--textbox -->
+      <link rel="stylesheet" href="css/text.scss">
       
       <!-- Scrollbar Custom CSS -->
       <!-- nav bar-->
@@ -52,9 +53,35 @@
 
     <chat>
         <style>
+            h2 {text-align: center;}
+            p {
+                text-align: justify;
+                font-family: "Arial Narrow", Arial, sans-serif;
+  
+            }
+
+            
+            div.textbox{
+                position: relative;
+                background-color: white;
+                border-style: solid;
+                border-width: 20px;
+                border-radius: 15%;
+                border-color: white;
+                left: 10%;
+                width: 75%;
+                
+            }
 
         </style>
-        This Chart is made with Chart.js and Socket.io. All the data that you can see are syncronised with other users in a extremelly short delay.</chat>
+
+        <h2>Syncronised Graph</h2>
+        <div class="textbox">
+            <p>What you are seeing is a  graph that simulated stock market mouvements. It is syncronysed with all viewers of this website using socket.io (webRTC). You can also bet on the stock. Have fun! </p>
+        </div>
+               
+  
+    </chat>
     <section>
         <link rel="icon" href="images/fevicon.png" type="image/gif" />
         <meta chartset="UTF-8">
@@ -88,7 +115,7 @@
 
     </section>
     <aside>
-    <script src="3d.pug"></script>
+
         
     </aside>
     <caller>
