@@ -1,19 +1,13 @@
-//Hey hackers ! This is the creator of the website :) Feel free to check-out any loopholes. 
-//I'm just 20y.o so I'm sure there are a few corrections to make. If you are kind enough, can you tell me where are the problemes.
-//I'm passionated about JS and cryptos, if you can help me it would be great thanks !!!
-
 
 const socket = io();
 var ctx = document.getElementById('myChart').getContext('2d');
 
 let balance = 1000
-
-
-socket.on('createchart', () => {
+socket.once('clearloading', () => {
   document.getElementById("loading").remove();
+})
+socket.on('createchart', () => {
 
- 
- 
   data = []
   sec = 0
   function map(f, a) {
@@ -90,15 +84,42 @@ socket.on('createchart', () => {
 
 
   })
-  socket.on('clear', () =>{
+  socket.on('clear', (price) =>{
     
 
     function deletedata(){
+      
       myChart.data.labels.splice(-1, 1); // remove the label first
 
       myChart.data.datasets.forEach(dataset => {
         dataset.data.pop();
       });
+      
+      
+      if (ite_buy==1){
+
+        document.getElementById("sellat").innerHTML = ("Buy @:       " + price + "$  ");
+        console.log(price)
+        console.log(ite_buy)
+        balance = balance + price
+      }
+      if (ite_sell==1){
+          document.getElementById("sellat").innerHTML = ("Sell @:       " + price + "$  ");
+          console.log(price)
+
+          balance = balance - price
+      }
+      ite_buy=0
+      ite_sell=0
+      document.getElementById("ite_sell").innerHTML = ("     Order: " + ite_sell);
+      document.getElementById("ite_buy").innerHTML = ("      Order: " + ite_buy);
+      document.getElementById("btn-sell").style.backgroundColor = "red";
+      document.getElementById("btn-buy").style.backgroundColor = "green";
+      document.getElementById("btn-sell").disabled = false;
+      document.getElementById("btn-buy").disabled = false;
+      document.getElementById("balance").innerHTML = ("Balance: " + (Math.floor(balance)) + "$");
+      document.getElementById("sellat").innerHTML = ("Sell @:       $  ");
+      document.getElementById("buyat").innerHTML = ("Buy @:       $  ");
     }
     for (var i = 1; i < 374; i++) deletedata(i);
     myChart.options.scales = {
@@ -114,6 +135,7 @@ socket.on('createchart', () => {
       }
     };
     myChart.update();
+    
   })
 });
   
@@ -207,32 +229,3 @@ function sell(){
     }
 
 }
-socket.on('clearalltrade', (price) => {
-
-    
-    if (ite_buy==1){
-
-        document.getElementById("sellat").innerHTML = ("Buy @:       " + price + "$  ");
-        console.log(price)
-        console.log(ite_buy)
-        balance = balance + price
-    }
-    if (ite_sell==1){
-        document.getElementById("sellat").innerHTML = ("Sell @:       " + price + "$  ");
-        console.log(price)
-
-        balance = balance - price
-    }
-    ite_buy=0
-    ite_sell=0
-    document.getElementById("ite_sell").innerHTML = ("     Order: " + ite_sell);
-    document.getElementById("ite_buy").innerHTML = ("      Order: " + ite_buy);
-    document.getElementById("btn-sell").style.backgroundColor = "red";
-    document.getElementById("btn-buy").style.backgroundColor = "green";
-    document.getElementById("btn-sell").disabled = false;
-    document.getElementById("btn-buy").disabled = false;
-    document.getElementById("balance").innerHTML = ("Balance: " + (Math.floor(balance)) + "$");
-    document.getElementById("sellat").innerHTML = ("Sell @:       $  ");
-    document.getElementById("buyat").innerHTML = ("Buy @:       $  ");
-    
-})
