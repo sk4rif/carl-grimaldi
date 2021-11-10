@@ -78,17 +78,21 @@ function getdata(){
         io.emit('clearloading');
         io.emit('clear', price);
         clearInterval(interval);
+        if (yvalue.y<0){
+          yvalue.y=0
+        }
         sec=0
         io.emit('createchart');
         getdata();
 
-        //console.log(data);
+        //console.log(data)
 
         
       }
     
 
       if (yvalue.y<0){
+
         clearInterval(interval);
         console.log(price)
         io.emit('clearloading');
