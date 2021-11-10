@@ -1,5 +1,5 @@
-<style> html body {overflow: hidden}</style>
 
+<style>html body {overflow: hidden}</style>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -27,135 +27,132 @@
       <!-- Scrollbar Custom CSS -->
       <!-- nav bar-->
 
-
+    
    </head>
-   <!-- body -->
+
    <body class="main-layout">
       <!-- loader  -->
       <div class="loader_bg">
          <div class="loader"><img src="images/welcomebee.gif" alt="#" /></div>
       </div>
-      <!-- navbar -->
-      <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-      <body>
+      
+      <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+      <div class="popup center ">
+        <div class="icon">
+          <i class="fa fa-check"></i>
+        </div>
+        <div class="title">
+            Syncronised Graph
+        </div>
+        <div class="description">
+            What you are seeing is a  graph that simulated stock market mouvements. It is syncronysed with all viewers of this website using socket.io (webRTC). You can also bet on the stock. Have fun!
+        </div>
+        <div class="dismiss-btn">
+          <button id="dismiss-popup-btn">
+            Dismiss
+          </button>
+        </div>
+       </div>
+       <div class="center open-btn">
+          <button id="open-popup-btn">
+            About Chart
+          </button>
+      </div>
+
         <nav id="nav-1">
 
             <a class="link-1" href="index.html">Me</a>
-            <a class="link-1" href="play.html">Play</a>
-            <a class="link-1" href="finance.html">Finance</a>
+            <a class="link-1" href="play.html">SpaceMan2D</a>
+            <a class="link-1" href="finance.html">Sync. Chart</a>
             <a class="link-1" href="#">Python Stuff</a>
     
             <link rel="stylesheet" href="css/navbar-play.css">
           </nav>
    
- <!-- Note: This example only works with Windows Insider Preview Builds 16237+. -->
 
-    <chat>
-        <style>
-            h2 {text-align: center;}
-            p {
-                text-align: justify;
-                font-family: "Arial Narrow", Arial, sans-serif;
-  
-            }
+
+        <chat>
+
+        </chat>
+        <section>
+            <link rel="icon" href="images/fevicon.png" type="image/gif" />
+            <meta chartset="UTF-8">
+            <meta name="viewport" content="width=device-width" , initial-scale=1.0>
+            <meta http-equiv="X_UA-Compatible" content="ie=edge">
+            <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+            <script src="/socket.io/socket.io.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+            </link>
+
+            <div id="loading">
+                <img src="images/giphy.gif"/>
+            </div>
+
+        
+            <div id="container">
+                
+                <a class="navbar-price">
+                  
+                    <h2 id="text"></h2>
+        
+                    <h1 id="price"></h1>
+                </a>
+
+        
+                <canvas id="myChart"></canvas>
+                <script src='client_chart.js'></script>
+                <div onload="show();"></div>
+
+
+            </div>
 
             
-            div.textbox{
-                position: relative;
-                background-color: white;
-                border-style: solid;
-                border-width: 20px;
-                border-radius: 15%;
-                border-color: white;
-                left: 10%;
-                width: 75%;
-                
-            }
 
-        </style>
 
-        <h2>Syncronised Graph</h2>
-        <div class="textbox">
-            <p>What you are seeing is a  graph that simulated stock market mouvements. It is syncronysed with all viewers of this website using socket.io (webRTC). You can also bet on the stock. Have fun! </p>
-        </div>
-               
-  
-    </chat>
-    <section>
-        <link rel="icon" href="images/fevicon.png" type="image/gif" />
-        <meta chartset="UTF-8">
-        <meta name="viewport" content="width=device-width" , initial-scale=1.0>
-        <meta http-equiv="X_UA-Compatible" content="ie=edge">
-        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
-        </link>
+        </section>
+        <aside>
 
-        <div id="loading">
-            <img src="images/giphy.gif"/>
-         </div>
+            
+        </aside>
+        <caller>
+            <div id="Buy">
+                <button class="btn-buy" id="btn-buy" onclick='buy();'>Buy</button>
+            </div>
 
+            <div id="Sell">
+                <button class="btn-sell" id="btn-sell" onclick='sell();'>Sell</button>
+            </div>
+
+            <div id="Balance">
+                <h3 id="balance"></h3>
+            </div>
+            
+        </caller>
+
+
+        <video-public>
+            <div id="Buyat">
+                <p1 id="buyat"></p1>
+                <p1 id="ite_buy"></p1>
+            </div>
+
+        </video-public>
+        <video-private>
+            <div id="Sellat">
+                <p1 id="sellat"></p1>
+                <p1 id="ite_sell"></p1>
+            </div>
+        </video-private>
+
+        </body>
+        <script src="js/jquery.min.js"></script>
+
+        <script src="js/design.js"></script>
     
-        <div id="container">
-            <a class="navbar-price">
-                <h1 id="price"></h1>
-            </a>
+        <!-- sidebar -->
 
-    
-            <canvas id="myChart"></canvas>
-            <script src='client_chart.js'></script>
-            <div onload="show();"></div>
-
-
-        </div>
-
-        
-
-
-    </section>
-    <aside>
-
-        
-    </aside>
-    <caller>
-        <div id="Buy">
-            <button class="btn-buy" id="btn-buy" onclick='buy();'>Buy</button>
-        </div>
-
-        <div id="Sell">
-            <button class="btn-sell" id="btn-sell" onclick='sell();'>Sell</button>
-        </div>
-
-        <div id="Balance">
-            <h1 id="balance"></h1>
-        </div>
-        
-    </caller>
-
-
-    <video-public>
-        <div id="Buyat">
-            <p1 id="buyat"></p1>
-            <p1 id="ite_buy"></p1>
-        </div>
-
-    </video-public>
-    <video-private>
-        <div id="Sellat">
-            <p1 id="sellat"></p1>
-            <p1 id="ite_sell"></p1>
-        </div>
-    </video-private>
-
-      </body>
-      <script src="js/jquery.min.js"></script>
-
-      <script src="js/design.js"></script>
-   
-      <!-- sidebar -->
-
-      <script src="js/custom.js"></script>
+        <script src="js/custom.js"></script>
 
    </body>
 </html>
