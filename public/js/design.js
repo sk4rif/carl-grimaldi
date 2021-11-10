@@ -67,3 +67,14 @@ jQuery(document).ready(function($){
   target.parent().addClass('active');
 });
 
+setTimeout(function(){
+    document.getElementsByClassName("popup")[0].classList.add("active");
+}, 2000)
+
+document.getElementById("open-popup-btn").addEventListener("click",function(){
+  document.getElementsByClassName("popup")[0].classList.add("active");
+});
+
+document.getElementById("dismiss-popup-btn").addEventListener("click",function(){
+  document.getElementsByClassName("popup")[0].classList.remove("active");
+});
