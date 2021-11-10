@@ -1,10 +1,17 @@
 
+
 const socket = io();
 var ctx = document.getElementById('myChart').getContext('2d');
+
+let text = 0
+let text_load = "Connection to server"
+
+
 
 let balance = 1000
 socket.once('clearloading', () => {
   document.getElementById("loading").remove();
+  document.getElementById("text").remove();
 })
 socket.on('createchart', () => {
 
@@ -63,6 +70,7 @@ socket.on('createchart', () => {
     function updateConfigAsNewObject(myChart) {
       var xScale = myChart.scales.x;
       var yScale = myChart.scales.y;
+      
       if ((price*1.2)>myChart.options.scales.y.max){
         let zoom = myChart.options.scales.y.max * 1.4;
         myChart.options.scales.y = {
@@ -78,9 +86,10 @@ socket.on('createchart', () => {
       yScale = myChart.scales.y;
       myChart.update();
       document.getElementById("price").innerHTML = ("Carl Price: " + (Math.floor(price)) + "$");
-      document.getElementById("balance").innerHTML = ("Balance: " + (Math.floor(balance)) + "$");
+      document.getElementById("balance").innerHTML = (" Balance: " + (Math.floor(balance)) + "$");
     }
     updateConfigAsNewObject(myChart);
+
 
 
   })
@@ -229,3 +238,27 @@ function sell(){
     }
 
 }
+
+
+
+
+setInterval(function(){
+  text = text + 1
+  if (text == 1){
+      text_load = "Connection to server"
+  }
+  
+  if (text == 2){
+      text_load = "Connection to server."
+  }
+  if (text == 3){
+      text_load = "Connection to server.."
+      
+  }
+  if (text == 4){
+      text_load = "Connection to server..."
+      
+      text =0
+  }
+  document.getElementById("text").innerHTML = (text_load);
+  }, 200)
