@@ -241,10 +241,10 @@ img {
   }
 }
 /* End Header */
-
-/* Start Landing Section */
+/* Start landing Section */
 .landing {
   height: 100vh;
+  
 }
 .landing .container {
   display: flex;
@@ -252,9 +252,10 @@ img {
   flex-wrap: wrap;
   align-items: center;
   height: 100%;
+  
 }
 .landing .text {
-  text-align: start;
+  text-align: justify;
   flex: 1;
 }
 @media (max-width: 992px) {
@@ -273,6 +274,7 @@ img {
 @media (max-width: 1200px) {
 
   .landing .text h1 {
+    
     font-size: 36px;
   }
 }
@@ -283,7 +285,7 @@ img {
   }
 }
 .landing .text span {
-
+  font-family: 'Pixeboy', sans-serif;
   font-size: 18px;
   text-transform: capitalize;
   color: var(--second-color);
@@ -298,9 +300,9 @@ img {
 .landing .text p {
     font-family: 'Pixeboy', sans-serif;
   margin-top: 14px;
-  max-width: 600px;
+  max-width: 500px;
   line-height: 1.7;
-  font-size: 17px;
+  font-size: 15px;
 }
 @media (max-width: 992px) {
   .landing .text p {
@@ -325,6 +327,93 @@ img {
   }
 }
 /* End Landing Section */
+/* Start eduction Section */
+.eduction {
+  height: 100vh;
+
+}
+.eduction .container {
+  display: flex;
+
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+}
+.eduction .text {
+  font-family: 'Pixeboy', sans-serif;
+  text-align: justify;
+  flex: 1;
+}
+@media (max-width: 992px) {
+  .eduction .text {
+    text-align: center;
+  }
+}
+.eduction .text h1 {
+    font-family: 'Pixeboy', sans-serif;
+  font-size: 40px;
+  text-transform: capitalize;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--main-color);
+}
+@media (max-width: 1200px) {
+
+  .eduction .text h1 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 500px) {
+  
+  .eduction .text h1 {
+    font-size: 30px;
+  }
+}
+.eduction .text span {
+  font-family: 'Pixeboy', sans-serif;
+  font-size: 18px;
+  text-transform: capitalize;
+  color: var(--second-color);
+  font-weight: 500;
+}
+@media (max-width: 992px) {
+
+  .eduction .text span {
+    font-size: 17px;
+  }
+}
+.eduction .text p {
+    font-family: 'Pixeboy', sans-serif;
+  margin-top: 14px;
+  max-width: 600px;
+  line-height: 1.7;
+  font-size: 15px;
+}
+@media (max-width: 992px) {
+  .eduction .text p {
+    font-family: 'Pixeboy', sans-serif;
+    font-size: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (max-width: 992px) {
+  .eduction .btns-group {
+    justify-content: center;
+  }
+}
+.eduction .image {
+  flex: 0.85;
+  z-index: -1;
+}
+@media (max-width: 992px) {
+  .eduction .image {
+    display: none;
+  }
+}
+/* End eduction Section */
+
 
 /* Start Projects */
 .projects {
@@ -506,7 +595,7 @@ textarea:focus {
  <!-- Start Header -->
 <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="index.html" class="logo">portfolio</a>
+      <a href="index.html" class="logo">carl grimaldi</a>
       <div class="nav-links">
         <a href="#projects" class="fill">projects</a>
         <a href="play.html" class="fill">SpaceMan2D</a>
@@ -530,18 +619,41 @@ textarea:focus {
   <section class="landing" id="welcome-section">
     <div class="container">
       <div class="text">
-        <h1>welcome to my portfolio.</h1>
-        <span>I'm front end developer which is cool.!</span>
+        <h1>welcome to my portfolio!</h1>
+        <span>I'm front end developer which is cool!</span>
         <p>I have made up this portfolio for puplishing my projects into it so feel free to explorer it and don't forget to give me your feedbacks. your feedbacks will make this portfolio much more and more better.!</p>
         <div class="btns-group">
           <a href="#projects" class="btn btn-primary">let's explorer</a>
         </div>
       </div>
       <div class="image">
-        <img src="https://image.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg" alt="Coding Illsturation">
+        <img src="images/Carl_G.png" alt="Coding Illsturation">
       </div>
     </div>
   </section>
+
+  <section class="eduction" id="welcome-section">
+    <div class="container">
+      <div class="text">
+        <h1>Qualification Summary</h1>
+        <span>An analytical and highly focused individual, BSc (Honours) degree in Business Management with Finance at CASS Business School, with excellent educational credentials in Accounting and Finance Management. Strong communication skills in English (fluent) and French (native). Well prepared to thrive in a Master’s in computer science. </span>
+        <p>  </p>
+        <h3>Education</h3>
+        
+        <p> •	(Honours) in Business Management with Finance, CASS Business School, UK	Sept 2019 – May 2022</p>
+        <p> •	GPA: 4.0 (72.5%) – First Class Honours</p2>
+        <p> •	Top Modules: Quantitative Methods & Analytics (95%) | Financial & Mgmt. Accounting (88%) | Econometrics (75%)</p>
+        <p> •	Final Exams: Quantitative Methods & Analytics (100%) | Financial & Mgmt. Accounting (91%) | Econometrics (71%)</p>
+          
+          
+
+      </div>
+      <div class="image">
+        <img src="images/cass.png" alt="Coding Illsturation">
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Section -->
   <section class="projects" id="projects">
     <h2 class="section-title fill">Projects</h2>
