@@ -6,7 +6,6 @@
     font-weight: 400;
     src: local('Pixeboy'), url('https://fonts.cdnfonts.com/s/34898/Pixeboy-z8XGD.woff') format('woff');
   }
-
   .carousel-container{
   position: sticky;
   top: 0%;
@@ -372,7 +371,7 @@ p{
   }
   .eduction .text {
     font-family: 'Pixeboy', sans-serif;
-    text-align: justify;
+    text-align: center;
     flex: 1;
   }
   @media (max-width: 992px) {
@@ -386,7 +385,7 @@ p{
     text-transform: capitalize;
     font-weight: 700;
     letter-spacing: 1px;
-    color: var(--main-color);
+    color: black;
   }
   @media (max-width: 1200px) {
   
@@ -404,7 +403,7 @@ p{
     font-family: 'Pixeboy', sans-serif;
     font-size: 18px;
     text-transform: capitalize;
-    color: var(--second-color);
+    color: black;
     font-weight: 500;
   }
   @media (max-width: 992px) {
@@ -449,7 +448,7 @@ p{
   .projects {
     padding-top: var(--sections-padding);
     padding-bottom: var(--sections-padding);
-    background: aliceblue;
+    background: rgb(231, 197, 55);
   }
   .projects-content {
     display: grid;
@@ -523,7 +522,7 @@ p{
     text-align: center;
     max-width: 70%;
     margin: 0 auto;
-    color: var(--light-second-color);
+    color: black;
   }
   @media (max-width: 992px) {
     .contact .description {
@@ -630,13 +629,14 @@ p{
 <!-- Start Header -->
 <nav class="navbar" id="navbar">
   <div class="container">
-    <a href="index.html" class="logo">carl grimaldi</a>
+    <a href="index.html" class="logo">Carl Grimaldi</a>
     <div class="nav-links">
-      <a href="#projects" class="fill">projects</a>
+      
       <a href="play.html" class="fill">SpaceMan2D</a>
       <a href="finance.html" class="fill">Sync. Chart</a>
-      <a href="python.html" class="fill">Python Stuff</a>
+      <a href="#finance" class="fill">Python</a>
       <a href="#contact" class="fill">contact</a>
+
 
       <div class="toggle-menu scale-effect">
         <i class="fas fa-times"></i>
@@ -647,128 +647,70 @@ p{
     </div>
   </div>
 </nav>
+<!-- Landing Section -->
 
 <div class="carousel-container">
-  <div class="text-slide">
-    <p style="background: #fff" id="lastClone">Linkedin: Carl Grimaldi</p>
-    <p style="background: rgb(248, 227, 144)">GitHub: Sk4rif </p>
-    <p style="background: #fff">Instagram: @carl__grimaldi </p>
-    <p style="background: rgb(248, 227, 144)">Mail: grimaldi.carl.francois@gmail.com</p>
-    <p style="background: #fff">Linkedin: Carl Grimaldi</p>
-    <p style="background: rgb(248, 227, 144)" id="firstClone">GitHub: Sk4rif</p>
-  </div>
-</div>
-<!-- 
-<!-- Landing Section -->
-<section class="landing" id="welcome-section">
-  <div class="container">
-    <div class="text">
-      <h1>welcome to my portfolio!</h1>
-      <span>I'm a full stack developer while being a Finance Student! Pretty cool right ?</span>
-      <p>I have made up this portfolio for publishing my projects into it so feel free to explorer it and don't forget to give me your feedbacks. your feedbacks will make this portfolio much more and more better.!</p>
-      <div class="btns-group">
-        <a href="#education" class="btn btn-primary">About my self</a>
-      </div>
-      <div class="btns-group">
-        <a href="#projects" class="btn btn-primary">See Projects</a>
-      </div>
-    </div>
-    <div class="image">
-      <img src="images/Carl_G.png" alt="Coding Illsturation">
+    <div class="text-slide">
+      <p style="background: #fff" id="lastClone">Linkedin: Carl Grimaldi</p>
+      <p style="background: rgb(248, 227, 144)">GitHub: Sk4rif </p>
+      <p style="background: #fff">Instagram: @carl__grimaldi </p>
+      <p style="background: rgb(248, 227, 144)">Mail: grimaldi.carl.francois@gmail.com</p>
+      <p style="background: #fff">Linkedin: Carl Grimaldi</p>
+      <p style="background: rgb(248, 227, 144)" id="firstClone">GitHub: Sk4rif</p>
     </div>
   </div>
-</section>
+<section class="eduction" id="finance">
 
-<section class="eduction" id="education">
-  <div class="container">
-    <div class="text">
-      <h1>Qualification Summary</h1>
-      <span>An analytical and highly focused individual, BSc (Honours) degree in Business Management with Finance at CASS Business School, with excellent educational credentials in Accounting and Finance Management. Strong communication skills in English (fluent) and French (native). Well prepared to thrive in a Master’s in computer science. </span>
-      <p>  </p>
-      <h3>Education</h3>
+
+
+
+    <div class="container">
+      <div class="projects-content">
+          <div class="text">
+              <h1>Financial Automat Answer</h1>
+              <span>In my Quantitative Methods and Finance modules. I created this algorithm based on the keywords in the questions and how the sentence was phrased. The keywords were associated with specific chapters and the numbers with the corresponding keywords. The keyword that couldn’t be associated with a number in the question would have been the x to guess.</span>
+              
+              <p>  </p>
+              <iframe src="https://trinket.io/embed/python/9d619294bc" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+          
       
-      <p> •	(Honours) in Business Management with Finance, CASS Business School, UK	Sept 2019 – May 2022</p>
-      <p> •	GPA: 4.0 (72.5%) – First Class Honours</p2>
-      <p> •	Top Modules: Quantitative Methods & Analytics (95%) | Financial & Mgmt. Accounting (88%) | Econometrics (75%)</p>
-      <p> •	Final Exams: Quantitative Methods & Analytics (100%) | Financial & Mgmt. Accounting (91%) | Econometrics (71%)</p>
-        
-        
-
-    </div>
-    <div class="image">
-      <img src="images/cass.png" alt="Coding Illsturation">
-    </div>
+          </div>
+      </div>
   </div>
 </section>
 
 <!-- Projects Section -->
 <section class="projects" id="projects">
-  <h2 class="section-title fill">Projects</h2>
+  <h2 class="section-title fill">Gap Detector Commodities</h2>
   <div class="container">
     <div class="projects-content">
-      <div class="project">
-        <div class="project-image">
-          <img src="images/spacemanpic.png" alt="Project Image">
-        </div>
-        <div class="project-details">
-          <h3 class="project-tile">SPACEMAN2D</h3>
-          <p class="project-description">Developed a platform game in 3 days using JavaScript and Kaboom.js Have Fun !</p>
-          <div class="btns-group">
-            <a href="play.html" class="btn btn-primary">view project</a>
-          </div>
-        </div>
-      </div>
-      <div class="project">
-        <div class="Trade Game">
-          <img src="images/chart.png" alt="Project Image">
-        </div>
-        <div class="project-details">
-          <h3 class="project-tile">Trade Game</h3>
-          <p class="project-description">Using socket.io, I created a synchronized chart that is inspired by the real movement of a random stock market. All data are synchronized in real time connection, and you can gamble on the movement of the chart (demo available on my website).</p>
-          <div class="btns-group">
-            <a href="finance.html" class="btn btn-primary">view project</a>
-          </div>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project-image">
-          <img src="images/python.png" alt="Project Image">
-        </div>
-        <div class="project-details">
-          <h3 class="project-tile">Python Stuff</h3>
-          <p class="project-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, quos recusandae. Vitae hic sit accusantium!</p>
-          <div class="btns-group">
-            <a href="python.html" class="btn btn-primary">view project</a>
-          </div>
-        </div>
-      </div>
-    </div>
+        <div class="text">
    
+            <span>This was my first ever made program !</span>
+            
+            <p>  </p>
+            <iframe src="https://trinket.io/embed/python/722246b375?showInstructions=true" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    
+        </div>
+    </div>
+    
   </div>
 </section>
 <!-- Contact Section -->
-<section class="contact" id="contact">
-  <h2 class="section-title fill">Contact</h2>
-  <p class="description">send me your feedbacks here and your opinions about this portfolio and remember to be <span class="special">nice</span> <i class="fas fa-heart"></i>.</p>
-  <div class="container">
-    <form action="#" enctype="multipart/form-data" method="post">
-      <div class="field">
-        <label for="first-name">first name</label>
-        <input type="text" id="first-name" placeholder="First name" required>
+<section class="education" id="Alarm">
+    <h2 class="section-title fill">Stock Alarm</h2>
+    <div class="container">
+      <div class="projects-content">
+          <div class="text">
+             
+              <span>My second project !</span>
+              
+              <p>  </p>
+              <iframe src="https://trinket.io/embed/python/47d60c1cdf?start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+          
+      
+            </div>
       </div>
-      <div class="field">
-        <label for="last-name">last name</label>
-        <input type="text" id="last-name" placeholder="Last name">
-      </div>
-      <div class="field">
-        <label for="email-name">email</label>
-        <input type="text" id="email-name" placeholder="Email" required>
-      </div>
-      <textarea name="user-opinion" placeholder="Your Message..."></textarea>
-      <input type="submit" href="index.html" value="Send Feedback" class="btn btn-primary">
-      <a href="index.html" class="btn btn-primary">Send Feedback</a>
-    </form>
-  </div>
 </section>
 <!-- Footer -->
 <footer class="footer">
@@ -807,6 +749,8 @@ navLinks.classList.toggle("active");
 
 toggleLinks(toggleMenu, toggleNavLinks);
 toggleLinks(links, toggleNavLinks);
+
+
 const textSlide = document.querySelector(".text-slide");
 const text = textSlide.querySelectorAll("p");
 
@@ -842,7 +786,5 @@ textSlide.addEventListener('transitionend', () => {
     textSlide.style.transform = `translateX(-${size * counter}px)`;
   }  
 });
-
-
 
 </script>
