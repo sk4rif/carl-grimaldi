@@ -95,7 +95,7 @@ socket.on('createchart', () => {
   })
   socket.on('clear', (price) =>{
     
-
+  console.log('clear');
     function deletedata(){
       
       myChart.data.labels.splice(-1, 1); // remove the label first
