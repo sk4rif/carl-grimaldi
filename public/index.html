@@ -1,771 +1,848 @@
-
 <style>/* Start Global Rules */
-/* Start Global Rules */
-@font-face {
-  font-family: 'Pixeboy';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Pixeboy'), url('https://fonts.cdnfonts.com/s/34898/Pixeboy-z8XGD.woff') format('woff');
-}
-*,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  outline: none;
-}
-*::placeholder {
-  font-size: 15px;
-  font-family: 'Pixeboy', sans-serif;
-  font-weight: 500;
-}
-:root {
-  --f-transition: 0.2s; /*  Fast Transition */
-  --main-transition: 0.3s; /* Main Transition */
-  --m-transition: 0.4s; /* Medium Transition */
-  --s-transition: 0.5s; /* Slow Transition */
-  --header-height: 60px;
-  --sections-padding: 60px;
-  --main-color: hsl(206, 92%, 46%);
-  --second-color: hsl(247, 74%, 63%);
-  --third-color: hsl(179, 100%, 40%);
-  --light-main-color: hsl(206, 92%, 50%);
-  --light-second-color: hsl(247, 74%, 67%);
-  --light-third-color: hsl(179, 100%, 44%);
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  font-family: 'Pixeboy', sans-serif;
-  font-size: 16px;
-}
-a {
-  text-decoration: none;
-}
-a:active {
-  transform: scale(0.91);
-  transition: transform var(--f-transition);
-}
-p {
-  line-height: 1.5;
-}
-ul,
-ol {
-  list-style: none;
-}
-img {
-  display: block;
-  max-width: 100%;
-  background-size: cover;
-}
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-/* Small Screens */
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
+  /* Start Global Rules */
+  @font-face {
+    font-family: 'Pixeboy';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Pixeboy'), url('https://fonts.cdnfonts.com/s/34898/Pixeboy-z8XGD.woff') format('woff');
   }
-}
-/* Medium Screens */
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-/* Large Screens */
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-/* End Global Rules */
 
-/* Start Utility Classes */
-.btn {
-    font-family: 'Pixeboy', sans-serif;
-  text-transform: capitalize;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 6px 15px;
-  transition: var(--main-transition), background-color var(--f-transition);
-}
-.btn-primary {
-  background: var(--third-color);
-  color: #fff;
-}
-.btn-primary:hover {
-  background: var(--light-third-color);
-}
-.scale-effect:active {
-  transform: scale(0.88);
-  transition: transform var(--f-transition);
-}
-.fill::after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 3px;
-  background: #fff;
-  transition: var(--main-transition);
-}
-.fill:hover::after {
-  width: 100%;
-}
-.section-title {
-    font-family: 'Pixeboy', sans-serif;
-  width: fit-content;
-  max-width: 400px;
-  margin: auto;
-  margin-bottom: 50px;
-  position: relative;
-  text-transform: capitalize;
-  font-weight: bold;
-  font-size: 35px;
-  color: var(--main-color);
-  cursor: pointer;
-}
-@media (max-width: 767px) {
-  .section-title {
-    margin-bottom: 40px;
-  }
-}
-.btns-group {
-  margin-top: 20px;
-  display: flex;
-  text-align: center;
-  gap: 10px;
-}
-/* End Utility Classes */
-
-/* Start Header */
-.navbar {
+  .carousel-container{
   position: sticky;
-  top: 0;
-  left: 0;
+  top: 0%;
+  left: 40%;
+  height: 5%;
+
+  border: 2px solid #111;
+
+
+ 
+  /* main style */
+  overflow: hidden;
+}
+
+.text-slide{
   width: 100%;
-  height: auto;
-  padding: 15px 0;
-  background: #F9CE14;
-  z-index: 99;
-  border-bottom: 1px solid aliceblue;
-}
-.navbar .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+
 }
-.navbar .logo {
-    font-family: 'Pixeboy', 'sans-sherif';
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  text-transform: uppercase;
+
+p{
+  min-width: 100%;
+  padding: 0.5rem;
+  color: black;
+  font-family: 'Pixeboy', 'sans-sherif';
+  font-size: 1.5rem;
+  text-align: center;
 }
-.navbar .logo:active {
-  transform: scale(1);
-}
-.nav-links {
-  transition: var(--main-transition);
-}
-.nav-links.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translatey(0);
-}
-@media (max-width: 992px) {
-  .nav-links {
-    position: fixed;
+
+
+  *,
+  *::before,
+  *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+  }
+  *::placeholder {
+    font-size: 15px;
+    font-family: 'Pixeboy', sans-serif;
+    font-weight: 500;
+  }
+  :root {
+    --f-transition: 0.2s; /*  Fast Transition */
+    --main-transition: 0.3s; /* Main Transition */
+    --m-transition: 0.4s; /* Medium Transition */
+    --s-transition: 0.5s; /* Slow Transition */
+    --header-height: 60px;
+    --sections-padding: 60px;
+    --main-color: hsl(206, 92%, 46%);
+    --second-color: hsl(247, 74%, 63%);
+    --third-color: hsl(179, 100%, 40%);
+    --light-main-color: hsl(206, 92%, 50%);
+    --light-second-color: hsl(247, 74%, 67%);
+    --light-third-color: hsl(179, 100%, 44%);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Pixeboy', sans-serif;
+    font-size: 16px;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:active {
+    transform: scale(0.91);
+    transition: transform var(--f-transition);
+  }
+  p {
+    line-height: 1.5;
+  }
+  ul,
+  ol {
+    list-style: none;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    background-size: cover;
+  }
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  /* Small Screens */
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  /* Medium Screens */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large Screens */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+  /* End Global Rules */
+  
+  /* Start Utility Classes */
+  .btn {
+      font-family: 'Pixeboy', sans-serif;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 6px 15px;
+    transition: var(--main-transition), background-color var(--f-transition);
+  }
+  .btn-primary {
+    background: var(--third-color);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: var(--light-third-color);
+  }
+  .scale-effect:active {
+    transform: scale(0.88);
+    transition: transform var(--f-transition);
+  }
+  .fill::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    transition: var(--main-transition);
+  }
+  .fill:hover::after {
+    width: 100%;
+  }
+  .section-title {
+      font-family: 'Pixeboy', sans-serif;
+    width: fit-content;
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 50px;
+    position: relative;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 35px;
+    color: var(--main-color);
+    cursor: pointer;
+  }
+  @media (max-width: 767px) {
+    .section-title {
+      margin-bottom: 40px;
+    }
+  }
+  .btns-group {
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
+    gap: 10px;
+  }
+  /* End Utility Classes */
+  
+  /* Start Header */
+  .navbar {
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: aliceblue;
-    z-index: 9999999;
+    height: auto;
+    padding: 15px 0;
+    background: #F9CE14;
+    z-index: 99;
+    border-bottom: 1px solid aliceblue;
+  }
+  .navbar .container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    transform: translatex(100%);
-    opacity: 0;
-    visibility: hidden;
   }
-}
-.nav-links a {
-    font-family: 'Pixeboy', sans-serif;
-  position: relative;
-  display: inline-block;
-  text-transform: capitalize;
-  margin-right: 20px;
-  color: #fff;
-  font-weight: 500;
-  font-size: 25px;
-}
-@media (max-width: 992px) {
+  .navbar .logo {
+      font-family: 'Pixeboy', 'sans-sherif';
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .navbar .logo:active {
+    transform: scale(1);
+  }
+  .nav-links {
+    transition: var(--main-transition);
+  }
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translatey(0);
+  }
+  @media (max-width: 992px) {
+    .nav-links {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: aliceblue;
+      z-index: 9999999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translatex(100%);
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
   .nav-links a {
-    font-family: 'Pixeboy', sans-serif;
-    margin-right: 0;
-    margin-bottom: 25px;
-    font-size: 20px;
+      font-family: 'Pixeboy', sans-serif;
+    position: relative;
+    display: inline-block;
+    text-transform: capitalize;
+    margin-right: 20px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 25px;
   }
-}
-.nav-links .toggle-menu {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-}
-.navbar .toggle-menu {
-    font-family: 'Pixeboy', sans-serif;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
-  color: var(--second-color);
-  font-size: 22px;
-  cursor: pointer;
-  display: none;
-  transition: var(--main-transition);
-}
-@media (max-width: 992px) {
+  @media (max-width: 992px) {
+    .nav-links a {
+      font-family: 'Pixeboy', sans-serif;
+      margin-right: 0;
+      margin-bottom: 25px;
+      font-size: 20px;
+    }
+  }
+  .nav-links .toggle-menu {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
   .navbar .toggle-menu {
-    display: block;
-  }
-}
-/* End Header */
-/* Start landing Section */
-.landing {
-  height: 100vh;
-  
-}
-.landing .container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  height: 100%;
-  
-}
-.landing .text {
-  text-align: justify;
-  flex: 1;
-}
-@media (max-width: 992px) {
-  .landing .text {
+      font-family: 'Pixeboy', sans-serif;
+    width: 40px;
+    height: 40px;
     text-align: center;
+    line-height: 40px;
+    color: var(--second-color);
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    transition: var(--main-transition);
   }
-}
-.landing .text h1 {
-    font-family: 'Pixeboy', sans-serif;
-  font-size: 40px;
-  text-transform: capitalize;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--main-color);
-}
-@media (max-width: 1200px) {
-
-  .landing .text h1 {
+  @media (max-width: 992px) {
+    .navbar .toggle-menu {
+      display: block;
+    }
+  }
+  /* End Header */
+  /* Start landing Section */
+  .landing {
+    height: 100vh;
     
-    font-size: 36px;
   }
-}
-@media (max-width: 500px) {
-  
+  .landing .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+    
+  }
+  .landing .text {
+    text-align: justify;
+    flex: 1;
+  }
+  @media (max-width: 992px) {
+    .landing .text {
+      text-align: center;
+    }
+  }
   .landing .text h1 {
-    font-size: 30px;
+      font-family: 'Pixeboy', sans-serif;
+    font-size: 40px;
+    text-transform: capitalize;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--main-color);
   }
-}
-.landing .text span {
-  font-family: 'Pixeboy', sans-serif;
-  font-size: 18px;
-  text-transform: capitalize;
-  color: var(--second-color);
-  font-weight: 500;
-}
-@media (max-width: 992px) {
-
-  .landing .text span {
-    font-size: 17px;
-  }
-}
-.landing .text p {
-    font-family: 'Pixeboy', sans-serif;
-  margin-top: 14px;
-  max-width: 500px;
-  line-height: 1.7;
-  font-size: 15px;
-}
-@media (max-width: 992px) {
-  .landing .text p {
-    font-family: 'Pixeboy', sans-serif;
-    font-size: 16px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-@media (max-width: 992px) {
-  .landing .btns-group {
-    justify-content: center;
-  }
-}
-.landing .image {
-  flex: 0.85;
-  z-index: -1;
-}
-@media (max-width: 992px) {
-  .landing .image {
-    display: none;
-  }
-}
-/* End Landing Section */
-/* Start eduction Section */
-.eduction {
-  height: 100vh;
-
-}
-.eduction .container {
-  display: flex;
-
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  height: 100%;
-}
-.eduction .text {
-  font-family: 'Pixeboy', sans-serif;
-  text-align: justify;
-  flex: 1;
-}
-@media (max-width: 992px) {
-  .eduction .text {
-    text-align: center;
-  }
-}
-.eduction .text h1 {
-    font-family: 'Pixeboy', sans-serif;
-  font-size: 40px;
-  text-transform: capitalize;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--main-color);
-}
-@media (max-width: 1200px) {
-
-  .eduction .text h1 {
-    font-size: 36px;
-  }
-}
-@media (max-width: 500px) {
+  @media (max-width: 1200px) {
   
-  .eduction .text h1 {
-    font-size: 30px;
+    .landing .text h1 {
+      
+      font-size: 36px;
+    }
   }
-}
-.eduction .text span {
-  font-family: 'Pixeboy', sans-serif;
-  font-size: 18px;
-  text-transform: capitalize;
-  color: var(--second-color);
-  font-weight: 500;
-}
-@media (max-width: 992px) {
-
-  .eduction .text span {
-    font-size: 17px;
+  @media (max-width: 500px) {
+    
+    .landing .text h1 {
+      font-size: 30px;
+    }
   }
-}
-.eduction .text p {
+  .landing .text span {
     font-family: 'Pixeboy', sans-serif;
-  margin-top: 14px;
-  max-width: 600px;
-  line-height: 1.7;
-  font-size: 15px;
-}
-@media (max-width: 992px) {
-  .eduction .text p {
-    font-family: 'Pixeboy', sans-serif;
-    font-size: 15px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-@media (max-width: 992px) {
-  .eduction .btns-group {
-    justify-content: center;
-  }
-}
-.eduction .image {
-  flex: 0.85;
-  z-index: -1;
-}
-@media (max-width: 992px) {
-  .eduction .image {
-    display: none;
-  }
-}
-/* End eduction Section */
-
-
-/* Start Projects */
-.projects {
-  padding-top: var(--sections-padding);
-  padding-bottom: var(--sections-padding);
-  background: aliceblue;
-}
-.projects-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-.projects-content .project {
-  position: relative;
-  border-radius: 6px;
-  background: #fff;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-.project .project-details {
-  padding: 15px;
-  text-align: start;
-  color: #000;
-}
-.project .project-tile {
-    font-family: 'Pixeboy', sans-serif;
-  text-transform: capitalize;
-  margin-bottom: 8px;
-  color: var(--main-color);
-  font-size: 22px;
-  font-weight: 600;
-}
-.project .project-description {
-    font-family: 'Pixeboy', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #555;
-}
-.project .btn {
-    font-family: 'Pixeboy', sans-serif;
-  font-weight: 500;
-  padding: 5px 10px;
-  font-size: 15px;
-}
-.projects .more-projects {
-  text-align: center;
-  display: block;
-  width: fit-content;
-  max-width: 400px;
-  margin: 40px auto 0;
-}
-.projects .more-projects.btn-primary {
-  background: var(--second-color);
-}
-.projects .more-projects.btn-primary:hover {
-  background: var(--light-second-color);
-}
-.projects .more-projects i {
-  margin-left: 2px;
-  transform: translateX(0);
-  transition: var(--main-transition);
-}
-.projects .more-projects:hover i {
-  transform: translateX(4px);
-}
-/* End Projects */
-
-/* Start contact */
-.contact {
-  padding-top: var(--sections-padding);
-  padding-bottom: var(--sections-padding);
-}
-.contact .description {
-    font-family: 'Pixeboy', sans-serif;
-  text-transform: capitalize;
-  font-size: 20px;
-  text-align: center;
-  max-width: 70%;
-  margin: 0 auto;
-  color: var(--light-second-color);
-}
-@media (max-width: 992px) {
-  .contact .description {
-    max-width: 100%;
     font-size: 18px;
+    text-transform: capitalize;
+    color: var(--second-color);
+    font-weight: 500;
   }
-}
-.contact form {
-  width: 70%;
-  margin: 40px auto;
-}
-@media (max-width: 992px) {
+  @media (max-width: 992px) {
+  
+    .landing .text span {
+      font-size: 17px;
+    }
+  }
+  .landing .text p {
+      font-family: 'Pixeboy', sans-serif;
+    margin-top: 14px;
+    max-width: 500px;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  @media (max-width: 992px) {
+    .landing .text p {
+      font-family: 'Pixeboy', sans-serif;
+      font-size: 16px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  @media (max-width: 992px) {
+    .landing .btns-group {
+      justify-content: center;
+    }
+  }
+  .landing .image {
+    flex: 0.85;
+    z-index: -1;
+  }
+  @media (max-width: 992px) {
+    .landing .image {
+      display: none;
+    }
+  }
+  /* End Landing Section */
+  /* Start eduction Section */
+  .eduction {
+    height: 100vh;
+  
+  }
+  .eduction .container {
+    display: flex;
+  
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+  }
+  .eduction .text {
+    font-family: 'Pixeboy', sans-serif;
+    text-align: justify;
+    flex: 1;
+  }
+  @media (max-width: 992px) {
+    .eduction .text {
+      text-align: center;
+    }
+  }
+  .eduction .text h1 {
+      font-family: 'Pixeboy', sans-serif;
+    font-size: 40px;
+    text-transform: capitalize;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--main-color);
+  }
+  @media (max-width: 1200px) {
+  
+    .eduction .text h1 {
+      font-size: 36px;
+    }
+  }
+  @media (max-width: 500px) {
+    
+    .eduction .text h1 {
+      font-size: 30px;
+    }
+  }
+  .eduction .text span {
+    font-family: 'Pixeboy', sans-serif;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: var(--second-color);
+    font-weight: 500;
+  }
+  @media (max-width: 992px) {
+  
+    .eduction .text span {
+      font-size: 17px;
+    }
+  }
+  .eduction .text p {
+      font-family: 'Pixeboy', sans-serif;
+    margin-top: 14px;
+    max-width: 600px;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  @media (max-width: 992px) {
+    .eduction .text p {
+      font-family: 'Pixeboy', sans-serif;
+      font-size: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  @media (max-width: 992px) {
+    .eduction .btns-group {
+      justify-content: center;
+    }
+  }
+  .eduction .image {
+    flex: 0.85;
+    z-index: -1;
+  }
+  @media (max-width: 992px) {
+    .eduction .image {
+      display: none;
+    }
+  }
+  /* End eduction Section */
+  
+  
+  /* Start Projects */
+  .projects {
+    padding-top: var(--sections-padding);
+    padding-bottom: var(--sections-padding);
+    background: aliceblue;
+  }
+  .projects-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  .projects-content .project {
+    position: relative;
+    border-radius: 6px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .project .project-details {
+    padding: 15px;
+    text-align: start;
+    color: #000;
+  }
+  .project .project-tile {
+      font-family: 'Pixeboy', sans-serif;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+    color: var(--main-color);
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .project .project-description {
+      font-family: 'Pixeboy', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+  }
+  .project .btn {
+      font-family: 'Pixeboy', sans-serif;
+    font-weight: 500;
+    padding: 5px 10px;
+    font-size: 15px;
+  }
+  .projects .more-projects {
+    text-align: center;
+    display: block;
+    width: fit-content;
+    max-width: 400px;
+    margin: 40px auto 0;
+  }
+  .projects .more-projects.btn-primary {
+    background: var(--second-color);
+  }
+  .projects .more-projects.btn-primary:hover {
+    background: var(--light-second-color);
+  }
+  .projects .more-projects i {
+    margin-left: 2px;
+    transform: translateX(0);
+    transition: var(--main-transition);
+  }
+  .projects .more-projects:hover i {
+    transform: translateX(4px);
+  }
+  /* End Projects */
+  
+  /* Start contact */
+  .contact {
+    padding-top: var(--sections-padding);
+    padding-bottom: var(--sections-padding);
+  }
+  .contact .description {
+      font-family: 'Pixeboy', sans-serif;
+    text-transform: capitalize;
+    font-size: 20px;
+    text-align: center;
+    max-width: 70%;
+    margin: 0 auto;
+    color: var(--light-second-color);
+  }
+  @media (max-width: 992px) {
+    .contact .description {
+      max-width: 100%;
+      font-size: 18px;
+    }
+  }
   .contact form {
-    width: 100%;
+    width: 70%;
     margin: 40px auto;
   }
-}
-.contact form .field {
-  margin-bottom: 15px;
-}
-.contact form label {
-  display: block;
-  text-transform: capitalize;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-.contact form input,
-.contact form textarea {
+  @media (max-width: 992px) {
+    .contact form {
+      width: 100%;
+      margin: 40px auto;
+    }
+  }
+  .contact form .field {
+    margin-bottom: 15px;
+  }
+  .contact form label {
+    display: block;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .contact form input,
+  .contact form textarea {
+      font-family: 'Pixeboy', sans-serif;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: var(--f-transition);
+  }
+  input[type="text"]:focus,
+  textarea:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.1rem rgb(0 123 255 / 25%);
+  }
+  .contact form textarea {
+      
+    resize: vertical;
+    height: 220px;
     font-family: 'Pixeboy', sans-serif;
-  width: 100%;
-  border: 1px solid #ccc;
-  padding: 10px 12px;
-  font-size: 18px;
-  border-radius: 4px;
-  transition: var(--f-transition);
-}
-input[type="text"]:focus,
-textarea:focus {
-  border-color: #80bdff;
-  box-shadow: 0 0 0 0.1rem rgb(0 123 255 / 25%);
-}
-.contact form textarea {
-    
-  resize: vertical;
-  height: 220px;
-  font-family: 'Pixeboy', sans-serif;
-}
-.contact form input[type="submit"] {
-  border: none;
-  width: fit-content;
-  max-width: 400px;
-  cursor: pointer;
-  margin-top: 5px;
-}
-/* End contact */
-
-/* Start Footer */
-.footer {
-  background: aliceblue;
-  padding: 15px 0;
-  text-transform: capitalize;
-  text-align: center;
-  color: var(--main-color);
-  font-size: 17px;
-}
-.footer a {
-  font-weight: 500;
-  color: var(--second-color);
-}
-/* End Footer */
-
-
-</style>
+  }
+  .contact form input[type="submit"] {
+    border: none;
+    width: fit-content;
+    max-width: 400px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  /* End contact */
+  
+  /* Start Footer */
+  .footer {
+    background: aliceblue;
+    padding: 15px 0;
+    text-transform: capitalize;
+    text-align: center;
+    color: var(--main-color);
+    font-size: 17px;
+  }
+  .footer a {
+    font-weight: 500;
+    color: var(--second-color);
+  }
+  /* End Footer */
+  
+  
+  </style>
+  
 
 
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
+    <head>
       <title>Carl Grimaldi</title>
       <link rel="shortcut icon" type="image/png" href="images/cfg.png">
     </head>
     <body>
-        <div class="loader_bg">
-            <link rel="stylesheet" href="css/bootstrap.min.css">
-            <!-- style css -->
-            <link rel="stylesheet" href="css/style.css">
-            <script src="js/jquery.min.js"></script>
+      <div class="loader_bg">
+          <link rel="stylesheet" href="css/bootstrap.min.css">
+          <!-- style css -->
+          <link rel="stylesheet" href="css/style.css">
+          <script src="js/jquery.min.js"></script>
 
-            <script src="js/design.js"></script>
-        
-            <!-- sidebar -->
-    
-            <script src="js/custom.js"></script>
-            <!-- Responsive-->
-            <link rel="stylesheet" href="css/loader.css">
-            <div class="loader"><img src="images/carl_g.gif" alt="#" /></div>
-            
-        </div>
-    </body>
+          <script src="js/design.js"></script>
+      
+          <!-- sidebar -->
+  
+          <script src="js/custom.js"></script>
+          <!-- Responsive-->
+          <link rel="stylesheet" href="css/loader.css">
+          <div class="loader"><img src="images/carl_g.gif" alt="#" /></div>
+          
+      </div>
+  </body>
 
- <!-- Start Header -->
- <!-- Start Header -->
+<!-- Start Header -->
+<!-- Start Header -->
 <nav class="navbar" id="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">carl grimaldi</a>
-      <div class="nav-links">
-        <a href="#projects" class="fill">projects</a>
-        <a href="play.html" class="fill">SpaceMan2D</a>
-        <a href="finance.html">Sync. Chart</a>
-        <a href="#contact" class="fill">contact</a>
+  <div class="container">
+    <a href="index.html" class="logo">carl grimaldi</a>
+    <div class="nav-links">
+      <a href="#projects" class="fill">projects</a>
+      <a href="play.html" class="fill">SpaceMan2D</a>
+      <a href="finance.html" class="fill">Sync. Chart</a>
+      <a href="python.html" class="fill">Python Stuff</a>
+      <a href="#contact" class="fill">contact</a>
 
-
-
-        
-        <a class="link-1" href="#">Python Stuff</a>
-        <div class="toggle-menu scale-effect">
-          <i class="fas fa-times"></i>
-        </div>
-      </div>
       <div class="toggle-menu scale-effect">
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-times"></i>
       </div>
     </div>
-  </nav>
-  <!-- Landing Section -->
-  <section class="landing" id="welcome-section">
-    <div class="container">
-      <div class="text">
-        <h1>welcome to my portfolio!</h1>
-        <span>I'm a full stack developer while being a Finance Student! Pretty cool right ?</span>
-        <p>I have made up this portfolio for publishing my projects into it so feel free to explorer it and don't forget to give me your feedbacks. your feedbacks will make this portfolio much more and more better.!</p>
-        <div class="btns-group">
-          <a href="#education" class="btn btn-primary">About my self</a>
-        </div>
-        <div class="btns-group">
-          <a href="#projects" class="btn btn-primary">See Projects</a>
-        </div>
-      </div>
-      <div class="image">
-        <img src="images/Carl_G.png" alt="Coding Illsturation">
-      </div>
+    <div class="toggle-menu scale-effect">
+      <i class="fas fa-bars"></i>
     </div>
-  </section>
+  </div>
+</nav>
 
-  <section class="eduction" id="education">
-    <div class="container">
-      <div class="text">
-        <h1>Qualification Summary</h1>
-        <span>An analytical and highly focused individual, BSc (Honours) degree in Business Management with Finance at CASS Business School, with excellent educational credentials in Accounting and Finance Management. Strong communication skills in English (fluent) and French (native). Well prepared to thrive in a Master’s in computer science. </span>
-        <p>  </p>
-        <h3>Education</h3>
+<div class="carousel-container">
+  <div class="text-slide">
+    <p style="background: #fff" id="lastClone">Linkedin: Carl Grimaldi</p>
+    <p style="background: rgb(248, 227, 144)">GitHub: Sk4rif </p>
+    <p style="background: #fff">Instagram: @carl__grimaldi </p>
+    <p style="background: rgb(248, 227, 144)">Mail: grimaldi.carl.francois@gmail.com</p>
+    <p style="background: #fff">Linkedin: Carl Grimaldi</p>
+    <p style="background: rgb(248, 227, 144)" id="firstClone">GitHub: Sk4rif</p>
+  </div>
+</div>
+<!-- 
+<!-- Landing Section -->
+<section class="landing" id="welcome-section">
+  <div class="container">
+    <div class="text">
+      <h1>welcome to my portfolio!</h1>
+      <span>I'm a full stack developer while being a Finance Student! Pretty cool right ?</span>
+      <p>I have made up this portfolio for publishing my projects into it so feel free to explorer it and don't forget to give me your feedbacks. your feedbacks will make this portfolio much more and more better.!</p>
+      <div class="btns-group">
+        <a href="#education" class="btn btn-primary">About my self</a>
+      </div>
+      <div class="btns-group">
+        <a href="#projects" class="btn btn-primary">See Projects</a>
+      </div>
+    </div>
+    <div class="image">
+      <img src="images/Carl_G.png" alt="Coding Illsturation">
+    </div>
+  </div>
+</section>
+
+<section class="eduction" id="education">
+  <div class="container">
+    <div class="text">
+      <h1>Qualification Summary</h1>
+      <span>An analytical and highly focused individual, BSc (Honours) degree in Business Management with Finance at CASS Business School, with excellent educational credentials in Accounting and Finance Management. Strong communication skills in English (fluent) and French (native). Well prepared to thrive in a Master’s in computer science. </span>
+      <p>  </p>
+      <h3>Education</h3>
+      
+      <p> •	(Honours) in Business Management with Finance, CASS Business School, UK	Sept 2019 – May 2022</p>
+      <p> •	GPA: 4.0 (72.5%) – First Class Honours</p2>
+      <p> •	Top Modules: Quantitative Methods & Analytics (95%) | Financial & Mgmt. Accounting (88%) | Econometrics (75%)</p>
+      <p> •	Final Exams: Quantitative Methods & Analytics (100%) | Financial & Mgmt. Accounting (91%) | Econometrics (71%)</p>
         
-        <p> •	(Honours) in Business Management with Finance, CASS Business School, UK	Sept 2019 – May 2022</p>
-        <p> •	GPA: 4.0 (72.5%) – First Class Honours</p2>
-        <p> •	Top Modules: Quantitative Methods & Analytics (95%) | Financial & Mgmt. Accounting (88%) | Econometrics (75%)</p>
-        <p> •	Final Exams: Quantitative Methods & Analytics (100%) | Financial & Mgmt. Accounting (91%) | Econometrics (71%)</p>
-          
-          
+        
 
-      </div>
-      <div class="image">
-        <img src="images/cass.png" alt="Coding Illsturation">
-      </div>
     </div>
-  </section>
+    <div class="image">
+      <img src="images/cass.png" alt="Coding Illsturation">
+    </div>
+  </div>
+</section>
 
-  <!-- Projects Section -->
-  <section class="projects" id="projects">
-    <h2 class="section-title fill">Projects</h2>
-    <div class="container">
-      <div class="projects-content">
-        <div class="project">
-          <div class="project-image">
-            <img src="images/spacemanpic.png" alt="Project Image">
-          </div>
-          <div class="project-details">
-            <h3 class="project-tile">SPACEMAN2D</h3>
-            <p class="project-description">Developed a platform game in 3 days using JavaScript and Kaboom.js Have Fun !</p>
-            <div class="btns-group">
-              <a href="play.html" class="btn btn-primary">view project</a>
-            </div>
-          </div>
+<!-- Projects Section -->
+<section class="projects" id="projects">
+  <h2 class="section-title fill">Projects</h2>
+  <div class="container">
+    <div class="projects-content">
+      <div class="project">
+        <div class="project-image">
+          <img src="images/spacemanpic.png" alt="Project Image">
         </div>
-        <div class="project">
-          <div class="Trade Game">
-            <img src="images/chart.png" alt="Project Image">
-          </div>
-          <div class="project-details">
-            <h3 class="project-tile">Trade Game</h3>
-            <p class="project-description">Using socket.io, I created a synchronized chart that is inspired by the real movement of a random stock market. All data are synchronized in real time connection, and you can gamble on the movement of the chart (demo available on my website).</p>
-            <div class="btns-group">
-              <a href="finance.html" class="btn btn-primary">view project</a>
-            </div>
-          </div>
-        </div>
-        <div class="project">
-          <div class="project-image">
-            <img src="https://images.unsplash.com/photo-1516542076529-1ea3854896f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1171&q=80" alt="Project Image">
-          </div>
-          <div class="project-details">
-            <h3 class="project-tile">project name</h3>
-            <p class="project-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, quos recusandae. Vitae hic sit accusantium!</p>
-            <div class="btns-group">
-              <a href="#" class="btn btn-primary">view project</a>
-            </div>
+        <div class="project-details">
+          <h3 class="project-tile">SPACEMAN2D</h3>
+          <p class="project-description">Developed a platform game in 3 days using JavaScript and Kaboom.js Have Fun !</p>
+          <div class="btns-group">
+            <a href="play.html" class="btn btn-primary">view project</a>
           </div>
         </div>
       </div>
-      <a href="https://codepen.io/FreeCodeCamp/" target="_blank" class="more-projects btn btn-primary" id="profile-link">show more <i class="fas fa-chevron-right"></i></a>
-    </div>
-  </section>
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <h2 class="section-title fill">Contact</h2>
-    <p class="description">send me your feedbacks here and your opinions about this portfolio and remember to be <span class="special">nice</span> <i class="fas fa-heart"></i>.</p>
-    <div class="container">
-      <form action="#" enctype="multipart/form-data" method="post">
-        <div class="field">
-          <label for="first-name">first name</label>
-          <input type="text" id="first-name" placeholder="First name" required>
+      <div class="project">
+        <div class="Trade Game">
+          <img src="images/chart.png" alt="Project Image">
         </div>
-        <div class="field">
-          <label for="last-name">last name</label>
-          <input type="text" id="last-name" placeholder="Last name">
+        <div class="project-details">
+          <h3 class="project-tile">Trade Game</h3>
+          <p class="project-description">Using socket.io, I created a synchronized chart that is inspired by the real movement of a random stock market. All data are synchronized in real time connection, and you can gamble on the movement of the chart (demo available on my website).</p>
+          <div class="btns-group">
+            <a href="finance.html" class="btn btn-primary">view project</a>
+          </div>
         </div>
-        <div class="field">
-          <label for="email-name">email</label>
-          <input type="text" id="email-name" placeholder="Email" required>
+      </div>
+      <div class="project">
+        <div class="project-image">
+          <img src="images/python.png" alt="Project Image">
         </div>
-        <textarea name="user-opinion" placeholder="Your Message..."></textarea>
-        <input type="submit" value="Send Feedback" class="btn btn-primary">
-      </form>
+        <div class="project-details">
+          <h3 class="project-tile">Python Stuff</h3>
+          <p class="project-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, quos recusandae. Vitae hic sit accusantium!</p>
+          <div class="btns-group">
+            <a href="python.html" class="btn btn-primary">view project</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>DataBase supported by MONGODB</p>
-      <p>&copy; <a href="https://www.freepik.com" target="_blank">Freepik</a> & <a href="https://www.unsplash.com">Unsplash</a></p>
-    </div>
-  </footer>
+   
+  </div>
+</section>
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <h2 class="section-title fill">Contact</h2>
+  <p class="description">send me your feedbacks here and your opinions about this portfolio and remember to be <span class="special">nice</span> <i class="fas fa-heart"></i>.</p>
+  <div class="container">
+    <form action="#" enctype="multipart/form-data" method="post">
+      <div class="field">
+        <label for="first-name">first name</label>
+        <input type="text" id="first-name" placeholder="First name" required>
+      </div>
+      <div class="field">
+        <label for="last-name">last name</label>
+        <input type="text" id="last-name" placeholder="Last name">
+      </div>
+      <div class="field">
+        <label for="email-name">email</label>
+        <input type="text" id="email-name" placeholder="Email" required>
+      </div>
+      <textarea name="user-opinion" placeholder="Your Message..."></textarea>
+      <input type="submit" href="index.html" value="Send Feedback" class="btn btn-primary">
+      <a href="index.html" class="btn btn-primary">Send Feedback</a>
+    </form>
+  </div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>DataBase supported by MONGODB</p>
+    <p>&copy; <a href="https://www.freepik.com" target="_blank">Freepik</a> & <a href="https://www.unsplash.com">Unsplash</a></p>
+  </div>
+</footer>
 </html>
 
 
 <script>
-    /*
-    Global Variables
+  /*
+  Global Variables
 */
 let toggleMenu = document.querySelectorAll(".navbar .toggle-menu");
 let navLinks = document.querySelector(".nav-links");
 let links = document.querySelectorAll(".nav-links a");
 
 /*
-    Main Function
+  Main Function
 */
 function toggleLinks(ourArray, ourFubction) {
-  ourArray.forEach((element) => {
-    element.addEventListener("click", () => {
-      ourFubction();
-    });
+ourArray.forEach((element) => {
+  element.addEventListener("click", () => {
+    ourFubction();
   });
+});
 }
 /*
-    Show & Hide Links Sidebar
+  Show & Hide Links Sidebar
 */
 function toggleNavLinks() {
-  navLinks.classList.toggle("active");
+navLinks.classList.toggle("active");
 }
 
 toggleLinks(toggleMenu, toggleNavLinks);
 toggleLinks(links, toggleNavLinks);
+const textSlide = document.querySelector(".text-slide");
+const text = textSlide.querySelectorAll("p");
+
+// const prev = document.querySelector(".prev");
+// const next = document.querySelector(".next");
+
+let counter = 1;
+const size = text[0].clientWidth;
+
+//to set the slide one as the first slide instead of the clone
+textSlide.style.transform = `translateX(-${size * counter}px)`;
+
+//looping the slider every 2s
+setInterval(()=>{
+  if(counter >= text.length -1) return;
+  
+  textSlide.style.transition = `transform 0.8s ease`;
+  counter++;
+  textSlide.style.transform = `translateX(-${size * counter}px)`; 
+  
+}, 3000);
+
+textSlide.addEventListener('transitionend', () => {
+  if(text[counter].id === 'lastClone'){
+    textSlide.style.transition = `none`;
+    counter = text.length - 2;
+    textSlide.style.transform = `translateX(-${size * counter}px)`;
+  }
+  
+  if(text[counter].id === 'firstClone'){
+    textSlide.style.transition = `none`;
+    counter = text.length - counter;
+    textSlide.style.transform = `translateX(-${size * counter}px)`;
+  }  
+});
+
 
 
 </script>
