@@ -128,8 +128,9 @@
                     noStroke();
                     fill(255);
                     textSize(24);
-                    text(object.label, object.x + 10, object.y + 24);
+                    text(object.label + '= Florane', object.x + 10, object.y + 24,);
                     if (object.label=='person'){
+                        
                         r = 255,
                         g = 0,
                         b = 0,
