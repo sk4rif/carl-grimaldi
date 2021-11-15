@@ -4,6 +4,100 @@
     position: absolute;
     top: 40px;
 }
+
+
+.center{
+  position:absolute;
+  top:90%;
+  left:48%;
+  transform:translate(-50%,-50%)
+}
+.popup{
+ 
+  width:350px;
+  height:480px;
+  padding:30px 20px;
+  background: rgb(221, 220, 220);
+  box-sizing:border-box;
+  border-radius: 10px;
+
+  z-index:2;
+  text-align:center;
+  opacity:0;
+  top:-300%;
+  transform:translate(-50%,-50%) scale(0.5);
+  transition:opacity 300ms ease-in-out,top 1000ms ease-in-out, transform 1000ms ease-in-out;
+ 
+}
+.popup.active{
+  opacity:1;
+  top:50%;
+  transform:translate(-50%,-50%) scale(1);
+  transition:transform 300ms cubic-bezier(0.18,0.89,0.43,1.19);
+}
+
+.popup .icon{
+  margin: 5px 0px;
+  width:50px;
+  height:50px;  
+  border: 2px solid #34f234;
+  text-align:center;
+  display:inline-block;
+  border-radius:50%;
+  line-height:55px;
+}
+.popup .title{
+  margin:5px 0px;
+  font-size:30px;
+  font-weight:600;
+}
+.popup .description{
+  color:#222;
+  font-size:15px;
+  padding:5px;
+}
+.popup .dismiss-btn{
+  margin-top:15px;
+}
+.dismiss-btn button ,.open-btn button{
+  padding:10px 20px;
+  background-color: #111;
+  color:#f5f5f5;
+  border: 2px solid #111;
+  font-size:16px;
+  font-weight:600;
+  outline:none;
+  border-radius:10px;
+  transition:all 300ms ease-in-out;
+  cursor:pointer;
+}
+.dismiss-btn button:hover,.open-btn button:hover{
+  color:#111;
+  background:#f5f5f5;
+}
+
+.popup > div{
+  position:relative;
+  top:10px;
+  opacity:0;
+}
+.popup.active > div{
+  top:0px;
+  opacity:1;
+}
+
+.popup.active .icon{
+  transition: all 300ms ease-in-out 250ms;
+}
+.popup.active .title{
+  transition: all 300ms ease-in-out 250ms;
+}
+.popup.active .description{
+  transition: all 300ms ease-in-out 250ms;
+}
+.popup.active .dismiss-btn{
+  transition: all 300ms ease-in-out 400ms;
+}
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +118,7 @@
       <!-- bootstrap css -->
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <!-- style css -->
-      <link rel="stylesheet" href="css/style.css">
+     
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
       <!--Loader -->
@@ -57,10 +151,10 @@
           <i class="fa fa-check"></i>
         </div>
         <div class="title">
-            Syncronised Graph
+            Artificial Intelligence Cam
         </div>
         <div class="description">
-            What you are seeing is a  graph that simulated stock market mouvements. It is syncronysed with all viewers of this website using socket.io (webRTC). You can also bet on the stock. Have fun!
+            What you see is an artificial intelligence that uses your camera to automatically detect objects and people. Using the machine learning library ml5.js and TensorFlow.js, the camera is able to recognize its surroundings with a confidence level (%). For the moment, the library used "ml5.js" has few object models that work properly, however, many applications can be made to serve the security and defense industry to detect threats or even to help blind or even deaf/mute people to communicate.
         </div>
         <div class="dismiss-btn">
           <button id="dismiss-popup-btn">
