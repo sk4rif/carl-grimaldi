@@ -87,14 +87,13 @@
    
         <div id = camera>
             <script>
-
+ 
                 // let img;
                 let video;
                 let detector;
                 let detections = [];
                 
                 function preload() {
-                  // img = loadImage('dog_cat.jpg');
                   detector = ml5.objectDetector('cocossd');
                 }
                 
@@ -112,6 +111,7 @@
                   video.size(640, 480);
                   video.hide();
                   detector.detect(video, gotDetections);
+                  
                 }
                 
                 let r = 0
@@ -128,15 +128,19 @@
                     noStroke();
                     fill(255);
                     textSize(24);
-                    text(object.label, object.x + 10, object.y + 24,);
+                    text(object.label + " confidence= " + Math.round(100*object.confidence)+"%", object.x + 10, object.y + 24,);
                     if (object.label=='person'){
-                        text(object.label + '= Florane', object.x + 10, object.y + 24,);
+                        rect(object.x, object.y+object.height/2, object.width, object.height/100);
+                        rect(object.x+object.width/2, object.y, object.width/100, object.height);
+                        
+                        
                         
                         r = 255,
                         g = 0,
                         b = 0,
-                        console.log('person');
-
+                        console.log('danger');
+                        
+                     
                     }
                     else {
                         r =0
